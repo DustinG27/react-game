@@ -1,0 +1,107 @@
+[
+    {
+      "id": 1,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "Bud Heavy",
+      "style": "Lager",
+      "notes": "Crisp & Clean"
+    },
+    {
+      "id": 2,
+      "image": "/public/assets/images/kanaha.png",
+      "name": "Kanaha",
+      "style": "Blonde Ale",
+      "notes": "Clean & Mango"
+    },
+    {
+      "id": 3,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "Dream Weaver",
+      "style": "Hefeweizen",
+      "notes": "Banana & Clove"
+    },
+    {
+      "id": 4,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "Sierra Navada",
+      "style": "Pale Ale",
+      "notes": "Citrus & Floral"
+    },
+    {
+      "id": 5,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "60 Minute",
+      "style": "IPA",
+      "notes": "Cedar & Pine"
+    },
+    {
+      "id": 6,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "Yuengling",
+      "style": "Amber Ale",
+      "notes": "Roasted Caramel & Malty"
+    },
+    {
+      "id": 7,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "Killian's",
+      "style": "Irish Red Ale",
+      "notes": "Bready & Caramel"
+    },
+    {
+      "id": 8,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "New Castle",
+      "style": "Brown Ale",
+      "notes": "Nutty & Molasses"
+    },
+    {
+      "id": 9,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "Edmund Fitzgerald",
+      "style": "Porter",
+      "notes": "Roasted Malt & Dark Chocolate"
+    },
+    {
+      "id": 10,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "K.B.S.",
+      "style": "Stout",
+      "notes": "Oak & Espresso"
+    },
+    {
+      "id": 11,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "Grolsch",
+      "style": "Pilsner",
+      "notes": "Cereal & Bready"
+    },
+    {
+      "id": 12,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "Gaffel",
+      "style": "Kolsh",
+      "notes": "Lemon & Vanilla"
+    },
+    {
+      "id": 13,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "Blithering Idiot",
+      "style": "Barley Wine",
+      "notes": "Caramel Malt & Fig"
+    },
+    {
+      "id": 14,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "Two Juicy",
+      "style": "New England IPA",
+      "notes": "Tropical Fruit & Hops"
+    },
+    {
+      "id": 15,
+      "image": "/assets/images/wassily-kandinsky-composition-8-1923.png",
+      "name": "Dirt Wolf",
+      "style": "DIPA",
+      "notes": "Citrus & Pine"
+    }
+  ]
