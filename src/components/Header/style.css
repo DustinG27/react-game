@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  margin: 0px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #101010;
+}
+
+.title,
+.info,
+.counter {
+  width: 150px;
+  height: 93px;
+  text-align: center;
+}
+
+.title p,
+.info p,
+.counter p {
+  top: 50%;
+  left: 50%;
+}
