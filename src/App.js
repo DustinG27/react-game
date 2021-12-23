@@ -25,16 +25,18 @@ class App extends Component {
   // assigning the states for later updating
   clickedBeer = id => {
     // tests if click function is connected
-    console.log(id)
+    // console.log(id)
     // setting open variables for manipulation
     let clickedBeer = this.state.clickedBeer;
     let currentScore = this.state.currentScore;
     let highScore = this.state.highScore;
   
-    
+    // if statement will push id's into an array then check for multiples
+    // the array then resets
     if (clickedBeer.indexOf(id) === -1) {
       // pushes selected id's into the clickedBeer array
       clickedBeer.push(id);
+      console.log(clickedBeer);
       // on success add 1 to current score
       this.handleIncrement();
       // this.shuffleArray();
