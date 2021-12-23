@@ -3,7 +3,7 @@ import "./style.css";
 
 function BeerCard(props) {
   return (
-    <div className="card">
+    <div className="card" onClick={() => props.clickedBeer(props.id)}>
       <div className="img-container">
         <img alt={props.name} src={props.image} />
       </div>
@@ -20,9 +20,6 @@ function BeerCard(props) {
           </li>
         </ul>
       </div>
-      <span onClick={() => props.removeFriend(props.id)} className="remove">
-        𝘅
-      </span>
     </div>
   );
 }

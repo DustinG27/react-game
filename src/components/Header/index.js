@@ -10,8 +10,8 @@ function Header(props) {
         <p>Click each beer only once</p>
       </div>
       <div className="counter">
-        <p>Current Score: 0</p>
-        <p>High Score: 0</p>
+        <p>Current Score: {props.currentScore}</p>
+        <p>High Score: {props.highScore}</p>
       </div>
   </div>;
 }
