@@ -43,7 +43,7 @@ class App extends Component {
     } else if (this.state.currentScore === 15) {
       this.setState({
         currentScore: 0,
-        highScore: +1 ,
+        highScore: this.state.highScore + 1,
         clickedBeer: []
       });
     } else {
