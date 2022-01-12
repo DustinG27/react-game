@@ -17,10 +17,42 @@ class App extends Component {
   // Setting state to beers.json and other global variables
   state = {
     beers,
+    title: "Click any beer you'd like!",
     currentScore: 0,
     highScore: 0,
     clickedBeer: []
   };
+
+  // increases the state.score to +1
+  handleIncrement = () => {
+    const newScore = this.state.currentScore + 1;
+    this.setState({
+        currentScore: newScore,
+        title: 'Keep Moving!'
+    });
+    if(newScore >= this.state.highScore){
+      this.setState({highScore: newScore});
+  }
+  else if (newScore === 12){
+      this.setState({message: 'Winner Winner Chicken Dinner!'})
+  } 
+  // this.shuffleArray();
+  };
+
+   //shuffle the list on each click
+   shuffleArray = () => {
+    this.setState({ beers: shuffle(beers) });
+  };
+
+  gameReset = () => {
+    this.setState({
+      title: "Click any beer you'd like!",
+    currentScore: 0,
+    highScore: this.state.highScore,
+    clickedBeer: []
+    })
+  }
+
 
   // assigning the states for later updating
   clickedBeer = id => {
@@ -40,7 +72,8 @@ class App extends Component {
       // on success add 1 to current score
       this.handleIncrement();
       // this.shuffleArray();
-    } else if (this.state.currentScore === 15) {
+      // testing the greater than sign. the score doesn't reset with === 15
+    } else if (this.state.currentScore === 14) {
       this.setState({
         currentScore: 0,
         highScore: this.state.highScore + 1,
@@ -51,26 +84,25 @@ class App extends Component {
         score: 0,
         clickedBeer: []
       });
+
+      if (currentScore > highScore) {
+        this.setState({
+          topScore: currentScore
+        });
+      }
     };
 
   };
 
-   // increases the state.score to +1
-   handleIncrement = () => {
-    this.setState({ currentScore: this.state.currentScore +1});
-  };
+   
 
-  //shuffle the list on each click
-  shuffleArray = () => {
-    this.setState({ beers: shuffle(beers) });
-  };
-
+ 
 
   render() {
     return (
       <Wrapper>
         <Header
-        title="mmm beer"
+        title={this.state.title}
         currentScore={this.state.currentScore}
         highScore={this.state.highScore}
         />

@@ -7,7 +7,7 @@ function Header(props) {
           <p>mmm beer</p>
       </div>
       <div className="info">
-        <p>Click each beer only once</p>
+        <p>{props.title}</p>
       </div>
       <div className="counter">
         <p>Current Score: {props.currentScore}</p>
