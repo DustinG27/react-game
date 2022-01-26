@@ -23,6 +23,22 @@ class App extends Component {
     clickedBeer: []
   };
 
+   //shuffle the list on each click
+   shuffleArray = () => {
+    this.setState({ beers: shuffle(beers) });
+  };
+
+   // handles game reset
+   gameReset = () => {
+    this.setState({
+      title: "Oops, try again.",
+      currentScore: 0,
+      highScore: this.state.highScore,
+      clickedBeer: []
+    });
+    this.shuffleArray();
+  }
+
   // increases the state.score to +1
   handleIncrement = () => {
     const newScore = this.state.currentScore + 1;
@@ -30,68 +46,35 @@ class App extends Component {
         currentScore: newScore,
         title: 'Keep Moving!'
     });
-    if(newScore >= this.state.highScore){
-      this.setState({highScore: newScore});
-  }
-  else if (newScore === 12){
+    
+    if(newScore === 15){
       this.setState({message: 'Winner Winner Chicken Dinner!'})
+      this.gameReset();
+  } else {
+      this.setState({
+        highScore: newScore
+      });
   } 
-  // this.shuffleArray();
+     
   };
 
-   //shuffle the list on each click
-   shuffleArray = () => {
-    this.setState({ beers: shuffle(beers) });
-  };
 
-  gameReset = () => {
-    this.setState({
-      title: "Click any beer you'd like!",
-    currentScore: 0,
-    highScore: this.state.highScore,
-    clickedBeer: []
-    })
-  }
+ 
 
 
   // assigning the states for later updating
   clickedBeer = id => {
     // tests if click function is connected
     // console.log(id)
-    // setting open variables for manipulation
     let clickedBeer = this.state.clickedBeer;
-    let currentScore = this.state.currentScore;
-    let highScore = this.state.highScore;
-  
     // if statement will push id's into an array then check for multiples
-    // the array then resets
+    
     if (clickedBeer.indexOf(id) === -1) {
-      // pushes selected id's into the clickedBeer array
-      clickedBeer.push(id);
-      console.log(clickedBeer);
-      // on success add 1 to current score
-      this.handleIncrement();
-      // this.shuffleArray();
-      // testing the greater than sign. the score doesn't reset with === 15
-    } else if (this.state.currentScore === 14) {
-      this.setState({
-        currentScore: 0,
-        highScore: this.state.highScore + 1,
-        clickedBeer: []
-      });
-    } else {
-      this.setState({
-        score: 0,
-        clickedBeer: []
-      });
-
-      if (currentScore > highScore) {
-        this.setState({
-          topScore: currentScore
-        });
-      }
-    };
-
+        this.handleIncrement();
+        this.setState({clickedBeer : this.state.clickedBeer.concat(id)});
+        }else{
+            this.gameReset();
+        };
   };
 
    
