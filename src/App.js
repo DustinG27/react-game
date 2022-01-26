@@ -47,7 +47,6 @@ class App extends Component {
     });
   };
 
-
  
 
 
@@ -55,7 +54,7 @@ class App extends Component {
   clickedBeer = id => {
     let clickedBeer = this.state.clickedBeer;
     let currentScore = this.state.currentScore;
-    let topScore = this.state.topScore;
+    let highScore = this.state.highScore;
 
     // if the clicked image has an id of the indexed paintings
     if (clickedBeer.indexOf(id) === -1) {
@@ -78,9 +77,9 @@ class App extends Component {
        this.gameReset();
     }
 
-    if (currentScore > topScore) {
+    if (currentScore > highScore) {
       this.setState({
-        topScore: currentScore
+        highScore: currentScore
       });
     }
   };
