@@ -41,21 +41,10 @@ class App extends Component {
 
   // increases the state.score to +1
   handleIncrement = () => {
-    const newScore = this.state.currentScore + 1;
     this.setState({
-        currentScore: newScore,
+        currentScore: this.state.currentScore + 1,
         title: 'Keep Moving!'
     });
-    
-    if(newScore === 15){
-      this.setState({message: 'Winner Winner Chicken Dinner!'})
-      this.gameReset();
-  } else {
-      this.setState({
-        highScore: newScore
-      });
-  } 
-     
   };
 
 
@@ -64,17 +53,36 @@ class App extends Component {
 
   // assigning the states for later updating
   clickedBeer = id => {
-    // tests if click function is connected
-    // console.log(id)
     let clickedBeer = this.state.clickedBeer;
-    // if statement will push id's into an array then check for multiples
-    
+    let currentScore = this.state.currentScore;
+    let topScore = this.state.topScore;
+
+    // if the clicked image has an id of the indexed paintings
     if (clickedBeer.indexOf(id) === -1) {
-        this.handleIncrement();
-        this.setState({clickedBeer : this.state.clickedBeer.concat(id)});
-        }else{
-            this.gameReset();
-        };
+      // push that id into that id into the array to be stored
+      clickedBeer.push(id);
+      console.log(clickedBeer);
+      // run the score function
+      this.handleIncrement();
+      // run the reshuffle function after each click
+      this.shuffleArray();
+    } else if (this.state.currentScore === 15) {
+      // alert player wins
+      this.setState({
+        currentScore: 0,
+        clickedBeer: [],
+        title: "You win!"
+      });
+    } else {
+        console.log("game reset")
+       this.gameReset();
+    }
+
+    if (currentScore > topScore) {
+      this.setState({
+        topScore: currentScore
+      });
+    }
   };
 
    
