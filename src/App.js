@@ -50,29 +50,33 @@ class App extends Component {
  
 
 
-  // assigning the states for later updating
+    // function to handle user clicks
   clickedBeer = id => {
+    // assigning the states for later updating
     let clickedBeer = this.state.clickedBeer;
     let currentScore = this.state.currentScore;
     let highScore = this.state.highScore;
 
-    // if the clicked image has an id of the indexed paintings
+    // if the clicked image has an id of the indexed beers
     if (clickedBeer.indexOf(id) === -1) {
       // push that id into that id into the array to be stored
       clickedBeer.push(id);
       console.log(clickedBeer);
-      // run the score function
       this.handleIncrement();
-      // run the reshuffle function after each click
-      this.shuffleArray();
-    } else if (this.state.currentScore === 15) {
+      // this.shuffleArray();
+    } 
+    
+    // if the score reaches 15 it will add to high score
+    else if (this.state.currentScore === 15) {
       // alert player wins
       this.setState({
         currentScore: 0,
         clickedBeer: [],
         title: "You win!"
       });
-    } else {
+    } 
+    
+    else {
         console.log("game reset")
        this.gameReset();
     }

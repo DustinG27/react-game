@@ -7,7 +7,7 @@ function Header(props) {
           <p>mmm beer</p>
       </div>
       <div className="info">
-        <p>{props.title}</p>
+        <h3>{props.title}</h3>
       </div>
       <div className="counter">
         <p>Current Score: {props.currentScore}</p>
