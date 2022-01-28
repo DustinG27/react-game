@@ -63,7 +63,7 @@ class App extends Component {
       clickedBeer.push(id);
       console.log(clickedBeer);
       this.handleIncrement();
-      // this.shuffleArray();
+      this.shuffleArray();
     } 
     
     // if the score reaches 15 it will add to high score
@@ -80,7 +80,7 @@ class App extends Component {
         console.log("game reset")
        this.gameReset();
     }
-
+    // updates high score 
     if (currentScore > highScore) {
       this.setState({
         highScore: currentScore
@@ -89,8 +89,6 @@ class App extends Component {
   };
 
    
-
- 
 
   render() {
     return (
